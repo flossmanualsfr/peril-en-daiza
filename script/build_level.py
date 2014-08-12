@@ -1,6 +1,3 @@
-#----------------------------------------------------------
-# File hello.py
-#----------------------------------------------------------
 import math
 import json
 import bpy
@@ -107,6 +104,7 @@ def load_level(level_name):
     return layer_ground, layer_object, layer_target, width, height
 
 def create_scene(level_name):
+    print(level_name)
     for scene in bpy.data.scenes:
         if scene.name == level_name:
             bpy.context.screen.scene = scene
@@ -121,6 +119,7 @@ def create_scene(level_name):
     
 
 def build_level(level_name):
+    print(level_name)
     create_scene(level_name)
     tiles_info_ground, tiles_info_object  = load_tiles_info()
     layer_ground, layer_object, layer_target, width, height = load_level(level_name)
@@ -153,42 +152,29 @@ def build_level(level_name):
     rename(navmesh, "Navmesh_"+level_name)
     rename(navmesh.data, "Navmesh_"+level_name)
     navmesh.draw_type = 'WIRE'
- 
-#
-#    Menu in toolprops region
-#
+
 class ToolPropsPanel(bpy.types.Panel):
     bl_label = "Build level"
     bl_space_type = "VIEW_3D"
     bl_region_type = "TOOL_PROPS"
- 
+    
     def draw(self, context):
         self.layout.prop(context.scene, "level_name")
         self.layout.row()
         self.layout.operator("build_level.build", text='Build level')
 
     def register() :
-        bpy.types.Scene.level_name = bpy.props.StringProperty(name = "filename:", description = "File name to load, located in /levels", default = "level1")
+        bpy.types.Scene.level_name = bpy.props.StringProperty(name = "filename:", description = "File name to load, located in /levels", default = "")
 
     def unregister() :
         del bpy.types.Scene.level_name
 
-#
-#    The Hello button prints a message in the console
-#
 class OBJECT_OT_HelloButton(bpy.types.Operator):
     bl_idname = "build_level.build"
     bl_label = "Build level"
  
     def execute(self, context):
-        build_level(bpy.types.Scene.level_name)
+        build_level(context.scene.level_name)
         return{'FINISHED'}
- 
-#
-#	Registration
-#   All panels and operators must be registered with Blender; otherwise
-#   they do not show up. The simplest way to register everything in the
-#   file is with a call to bpy.utils.register_module(__name__).
-#
- 
+
 bpy.utils.register_module(__name__)
