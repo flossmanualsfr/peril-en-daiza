@@ -58,7 +58,7 @@ def read_layer(level_name, layer, tiles_info, width, height, physic_level = None
                 rename(graphic_obj, "object_{0}_{1}".format(level_name, i))
                 graphic_obj.empty_draw_type = 'SPHERE'
 
-def read_target(level_name, layer, width, height):
+def read_layer_target(level_name, layer, width, height):
     objs = layer["objects"]
     i = 0
     for object in objs:
@@ -111,19 +111,37 @@ def create_scene(level_name):
             bpy.ops.scene.delete()
     bpy.ops.scene.new(type = 'EMPTY')
     bpy.context.scene.name = level_name
+
+def create_lamp(level_name, width, height):
+    #the lamp is added at the middle of the level
+    bpy.ops.object.lamp_add(location = (width, -height, 35), type = 'POINT')
+    lamp = bpy.context.object
+    lamp.data = bpy.data.lamps["light_day"]
+    rename(lamp, "lamp_{0}".format(level_name))
+
+def create_level_logic(level_name):
     bpy.ops.object.add(location = (0, 0, 10))
     logic_master = bpy.context.object
     logic_master.dupli_type = 'GROUP'
-    logic_master.dupli_group = bpy.data.groups["logic_master"]
-    rename(logic_master, "logic_master_{0}".format(level_name))
-    
+    logic_master.dupli_group = bpy.data.groups["level_logic"]
+    rename(logic_master, "level_logic_{0}".format(level_name))
+
+def create_camera(level_name):
+    bpy.ops.object.camera_add(rotation = (0, 0, 0))
+    camera = bpy.context.object
+    camera.data = bpy.data.cameras["camera_dummy"]
+    rename(camera, "camera_dummy_{0}".format(level_name))
+    bpy.context.scene.camera = camera
 
 def build_level(level_name):
-    print(level_name)
+    #create a scene with the correct name
     create_scene(level_name)
+    #tiles info are used to know which dupligroup to add
     tiles_info_ground, tiles_info_object  = load_tiles_info()
+    #load the level: three layers and a width/size
     layer_ground, layer_object, layer_target, width, height = load_level(level_name)
     
+    #prepare a physic mesh for the ground
     bpy.context.scene.cursor_location = (0.0,0.0,0.0)
     bpy.ops.object.add(type='MESH')
     physic_level = bpy.context.object
@@ -135,10 +153,14 @@ def build_level(level_name):
     physic_level.game.collision_bounds_type = 'TRIANGLE_MESH'
     physic_level.hide_render = True
     
+    #read the ground layer; the ground's physic mesh gets modified
     read_layer(level_name, layer_ground, tiles_info_ground, width, height, physic_level)
+    #read the object layer; no physic mesh to modify is provided
     read_layer(level_name, layer_object, tiles_info_object, width, height)
-    read_target(level_name, layer_target, width, height)
+    #read the target layer; only their location and properties are used
+    read_layer_target(level_name, layer_target, width, height)
     
+    #cleanup the ground's physic mesh (remove doubles)
     physic_level.select = True
     bpy.context.scene.objects.active = physic_level
     bpy.ops.object.mode_set(mode='EDIT')
@@ -146,12 +168,22 @@ def build_level(level_name):
     bpy.ops.mesh.remove_doubles(threshold=0.0001)
     bpy.ops.mesh.select_all(action='DESELECT')
     bpy.ops.object.mode_set(mode='OBJECT')
-
+    
+    #generate the navmesh
     bpy.ops.mesh.navmesh_make()
     navmesh = bpy.context.object
     rename(navmesh, "Navmesh_"+level_name)
     rename(navmesh.data, "Navmesh_"+level_name)
     navmesh.draw_type = 'WIRE'
+    
+    #add a lamp, default is light_day
+    create_lamp(level_name, width, height)
+    
+    #add a logic master
+    create_level_logic(level_name)
+    
+    #add a dummy camera
+    create_camera(level_name)
 
 class ToolPropsPanel(bpy.types.Panel):
     bl_label = "Build level"
