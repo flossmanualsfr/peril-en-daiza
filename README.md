@@ -19,7 +19,7 @@ Comment jouer
 Comment créer un niveau
 -----------------------
 
-TODO
+[Tutoriel de création de niveau](https://github.com/flossmanualsfr/peril-en-daiza/wiki/Cr%C3%A9ation-d%27un-niveau)
 
 Crédits
 -------
