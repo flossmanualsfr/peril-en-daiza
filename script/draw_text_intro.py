@@ -49,7 +49,6 @@ def write():
     cam = logic.getCurrentScene().active_camera
     t = cam["Timer"]
     c = timer - t
-    print(c)
     bgl.glColor4f(1, 1, 1, c)
     if cam["Switch"]:
         cam["Index"] += 1
