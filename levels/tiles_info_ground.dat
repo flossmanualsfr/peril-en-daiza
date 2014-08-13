@@ -1,27 +1,43 @@
-grand-coin    90
-mur-droit    -90
-grand-coin     0
+grand-coin                          90
+mur-droit                          -90
+grand-coin                           0
 
-mur-droit      0
-sol-plein      0
-mur-droit    180
+mur-droit                            0
+sol-plein                            0
+mur-droit                          180
 
-grand-coin   180
-mur-droit     90
-grand-coin   -90
+grand-coin                         180
+mur-droit                           90
+grand-coin                         -90
 
-petit-coin    90
-mur-droit     90
-petit-coin     0
+petit-coin                          90
+mur-droit                           90
+petit-coin                           0
 
-mur-droit    180
-haut-plein     0
-mur-droit      0
+mur-droit                          180
+haut-plein                           0
+mur-droit                            0
 
-petit-coin   180
-mur-droit    -90
-petit-coin   -90
+petit-coin                         180
+mur-droit                          -90
+petit-coin                         -90
 
-porte          0
-none           0
-none           0
+porte                                0
+none                                 0
+haut-bord-rochers                    0
+
+haut-bord-large-bambous              0
+none                                 0
+haut-bord-rochers-et-bambous         0
+
+none                                 0
+none                                 0
+haut-bord-bambous                    0
+
+haut-bord-large-rochers-et-bambous   0
+none                                 0
+none                                 0
+
+none                                 0
+none                                 0
+none                                 0
