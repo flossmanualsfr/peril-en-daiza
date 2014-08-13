@@ -8,10 +8,13 @@ Péril en Daïza
 Comment jouer
 -------------
 
-**Flèches** Se déplacer  
-**Barre d'espace** Utiliser le pouvoir du baton  
-**Tabulation** Zoomer sur le personnage  
-**Entrée** Passer l'intro  
+**Flèches** Se déplacer
+
+**Barre d'espace** Utiliser le pouvoir du baton
+
+**Tabulation** Zoomer sur le personnage
+
+**Entrée** Passer l'intro
 
 Comment créer un niveau
 -----------------------
