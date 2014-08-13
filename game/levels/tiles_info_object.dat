@@ -1,0 +1,47 @@
+menhir_bleu     0
+none            0
+none            0
+none            0
+bouton_bleu     0
+
+none            0
+none            0
+menhir_bleu    90
+none            0
+none            0
+
+menhir_rouge    0
+none            0
+none            0
+none            0
+bouton_rouge    0
+
+none            0
+none            0
+menhir_rouge   90
+none            0
+none            0
+
+menhir_mauve    0
+none            0
+none            0
+none            0
+bouton_mauve    0
+
+none            0
+none            0
+menhir_mauve   90
+none            0
+none            0
+
+bambou          0
+panda           0
+enemy_rusty     0
+enemy_normal    0
+enemy_berzerk   0
+
+none            0
+none            0
+none            0
+none            0
+none            0
