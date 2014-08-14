@@ -11,7 +11,7 @@ with codecs.open(logic.expandPath("//text/" + logic.globalDict["LANG"] + ".txt")
     text = [e.strip() for e in f.readlines()]
 import configparser
 config = configparser.ConfigParser()
-config.read(logic.expandPath("//text/" + logic.globalDict["LANG"] + ".ini"))
+config.readfp(codecs.open(logic.expandPath("//text/" + logic.globalDict["LANG"] + ".ini"), "r", "utf8"))
 skip = config.get("ACTION", 'skip')
 
 # camera["Timer"] using 'Timer' type to allow fading
@@ -65,4 +65,4 @@ def write():
     if cam["Index"] < 1:
         bgl.glColor4f(0.5, 0.5, 0.5, c)
         blf.position(font_id, width*0.02, height*0.9, 0)
-        blf.draw(font_id, skip.encode('latin1').decode('utf-8'))
+        blf.draw(font_id, skip)
