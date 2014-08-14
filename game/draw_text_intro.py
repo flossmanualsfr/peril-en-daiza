@@ -63,6 +63,6 @@ def write():
     
     # skip
     if cam["Index"] < 1:
-        bgl.glColor4f(1, 1, 1, c)
+        bgl.glColor4f(0.5, 0.5, 0.5, c)
         blf.position(font_id, width*0.02, height*0.9, 0)
-        blf.draw(font_id, skip.encode('latin1').decode('utf8'))
+        blf.draw(font_id, skip.encode('latin1').decode('utf-8'))
