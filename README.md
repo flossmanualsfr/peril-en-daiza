@@ -16,6 +16,8 @@ Comment jouer
 
 **Entrée** Passer l'intro
 
+**R** Recommencer le niveau courrant (si on est bloqué)
+
 Comment créer un niveau
 -----------------------
 
