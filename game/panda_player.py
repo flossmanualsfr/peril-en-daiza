@@ -23,6 +23,8 @@ class Panda(types.KX_GameObject):
         self.move()
         self.anim()
         self.action()
+        if keyHit(events.RKEY):
+            logic.getCurrentScene().restart()
     
     def move(self):
         x = 0
