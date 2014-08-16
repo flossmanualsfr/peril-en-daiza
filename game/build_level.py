@@ -133,6 +133,15 @@ def create_camera(level_name):
     rename(camera, "camera_dummy_{0}".format(level_name))
     bpy.context.scene.camera = camera
 
+def link_magic():
+    magic = bpy.data.objects["Magic"]
+    scene = bpy.context.scene
+    scene.objects.link(magic)
+    magic.layers = (False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False)
+    for obj in magic.children:
+        scene.objects.link(obj)
+        obj.layers = (False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False)
+
 def build_level(level_name):
     #create a scene with the correct name
     create_scene(level_name)
@@ -184,6 +193,9 @@ def build_level(level_name):
     
     #add a dummy camera
     create_camera(level_name)
+    
+    #link the magic power from the resources
+    link_magic()
 
 class ToolPropsPanel(bpy.types.Panel):
     bl_label = "Build level"
