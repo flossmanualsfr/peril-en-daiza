@@ -29,7 +29,7 @@ def read_layer(level_name, layer, tiles_info, width, height, physic_level = None
     for i in range(len(objs)):
         type = objs[i]
         x = i % width
-        y = -(i // height)
+        y = -(i // width)
         try:
             typename, angle = tiles_info[type]
         except KeyError:
@@ -37,6 +37,8 @@ def read_layer(level_name, layer, tiles_info, width, height, physic_level = None
         if typename != "none":
             loc = (2*x, 2*y, 0)
             rot = (0, 0, angle)
+            
+            print(typename, loc)
             
             bpy.ops.object.add(location = loc, rotation = rot)
             graphic_obj = bpy.context.object
@@ -111,6 +113,7 @@ def create_scene(level_name):
             bpy.ops.scene.delete()
     bpy.ops.scene.new(type = 'EMPTY')
     bpy.context.scene.name = level_name
+    bpy.context.scene.world = bpy.data.worlds["World_level"]
 
 def create_lamp(level_name, width, height):
     #the lamp is added at the middle of the level
@@ -203,22 +206,19 @@ class ToolPropsPanel(bpy.types.Panel):
     bl_region_type = "TOOL_PROPS"
     
     def draw(self, context):
-        self.layout.prop(context.scene, "level_name")
+        self.layout.prop(bpy.data, "level_name")
         self.layout.row()
         self.layout.operator("build_level.build", text='Build level')
 
     def register() :
-        bpy.types.Scene.level_name = bpy.props.StringProperty(name = "filename:", description = "File name to load, located in /levels", default = "")
-
-    def unregister() :
-        del bpy.types.Scene.level_name
+        bpy.types.BlendData.level_name = bpy.props.StringProperty(name = "filename:", description = "File name to load, located in /levels", default = "")
 
 class OBJECT_OT_HelloButton(bpy.types.Operator):
     bl_idname = "build_level.build"
     bl_label = "Build level"
  
     def execute(self, context):
-        build_level(context.scene.level_name)
+        build_level(bpy.data.level_name)
         return{'FINISHED'}
 
 bpy.utils.register_module(__name__)
