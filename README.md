@@ -9,6 +9,7 @@ Le projet a également son propre site web [perilendaiza.com](http://perilendaiz
 
 À propos du nom
 ---------------
+Le personnsage principal du jeu est un Panda, animal symbole des espèces en difficulté de survie et qui bénéficie d'une image positive et attendrissante.
 [Pairi Daiza](https://fr.wikipedia.org/wiki/Pairi_Daiza), anciennement Paradisio, est un parc animalier belge situé en Wallonie. 
 Début 2014, ce parc, géré par une société privée, a obtenu pour les quinze années à venir la garde de deux pandas prêtés par le gouvernemement chinois. 
 Cette acquisition a été perçue comme une trahison par le [ZOO d'Anvers](https://fr.wikipedia.org/wiki/Zoo_d%27Anvers), géré par la Société Royale de Zoologie d'Anvers, le plus vieux parc animalier de Belgique, situé lui, en Flandre. 
@@ -18,10 +19,11 @@ Cette affaire, que les médias ont appelé "pandagate", a fait trembler la Belgi
 Y a-t-il eu manipulation politique ? 
 Pourquoi le premier ministre en personne est-il allé accueillir les pandas à l'aéroport ? 
 Est-ce que les deux pandas seront l'étincelle qui provoquera la scission du pays ?
+Autant de questions qui ont ressurgi dans la bonne humeur du libérathon.
 
 Le choix d'un panda comme personnage principal du jeu n'a jamais été pensé en rapport avec ces événements. 
 La majorité des participants n'avait d'ailleurs aucune connaissance de ces faits (il n'y a que 4 belges dans l'équipe).
-C'est lorsqu'il fût question de choisir un nom pour le jeu que cette histoire belge refit surface au plus grand plaisir de l'assemblée. 
+C'est lorsqu'il fût question de choisir un nom pour le jeu que cette histoire belge refit surface au plus grand plaisir et à l'amusement de l'assemblée. 
 Le jeu de mot "Péril en Daïza" représente finalement bien l'histoire du jeu (un panda doit sauver sa communauté) et vient faire un clin d'oeil au contexte géographique de création du projet (Bruxelles).
 
 
@@ -45,4 +47,4 @@ Crédits
 [Toute l'équipe de co-auteurs du livre](http://fr.flossmanuals.net/blender-pour-le-jeu-video/ch042_a-propos) à contribué à la création du jeu.
 
 
-**Police** : "Big Bottom Cartoon" par [Karen B. Jones](http://karenbjones.com/), sous licence Creative Commons Attribution-ShareAlike 3.0
+**Police** : "Big Bottom Cartoon" par [Karen B. Jones](http://karenbjones.com/), sous licence Creative Commons Attribution-ShareAlike 3.0, modifiée par Cedric Gémy pour les caractères non-ASCII ainsi que la création de la variante italique.
