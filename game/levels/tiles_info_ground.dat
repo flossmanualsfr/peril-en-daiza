@@ -41,3 +41,27 @@ none                                 0
 none                                 0
 none                                 0
 none                                 0
+
+world-border-corner                180
+world-border                       180
+world-border-corner                 90
+
+world-border                       -90
+haut-plein                           0
+world-border                        90
+
+world-border-corner                -90
+world-border                         0
+world-border-corner                  0
+
+world-border-inner-corner            0
+world-border                         0
+world-border-inner-corner          -90
+
+world-border                        90
+none                                 0
+world-border                       -90
+
+world-border-inner-corner           90
+world-border                       180
+world-border-inner-corner          180

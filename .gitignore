@@ -1,4 +1,6 @@
 *.blend1
+*.blend2
+*.blend3
 game/__pycache__/
 game/__pycache__/*
 *#
