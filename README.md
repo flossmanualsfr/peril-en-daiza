@@ -33,6 +33,16 @@ La majorité des participants n'avait d'ailleurs aucune connaissance de ces fait
 C'est lorsqu'il fut question de choisir un nom pour le jeu que cette histoire belge refit surface au plus grand plaisir et amusement de l'assemblée.
 Le jeu de mot "Péril en Daïza" représente finalement bien l'histoire du jeu (un panda doit sauver sa communauté) et vient faire un clin d'oeil au contexte géographique de création du projet (Bruxelles).
 
+Démarrer le jeu
+---------------
+Pour démarrer la version de développemnet de Péril en Daïza, il est préférable d'avoir la version 2.72 de Blender (la version 2.71 provquant parfois des bugs lors du chargement des niveaux de jeu). 
+À ce jour, le version 2.72 n'étant pas encore sortie, nous suggérons donc d'utiliser la *[latest build](https://builder.blender.org/)*.
+
+ 1. [Télécharger l'archive complète](https://github.com/flossmanualsfr/peril-en-daiza/archive/master.zip) de ce projet  
+ ou effectuez un clone de ce dépôt `git clone https://github.com/flossmanualsfr/peril-en-daiza.git`.
+ 2. Lancer le blenderplayer avec le fichier perilendaiza.blend ( pour linux : p.ex. `$ blenderplayer ~/peril-en-daiza/game/perilendaiza.blend`)  
+ ou ouvrez le fichier perilendaiza.blend avec Blender et appuyez sur la touche 'p' de votre clavier
+
 Commandes de jeu
 ----------------
 
