@@ -113,7 +113,7 @@ About the name
 [Pairi Daiza](https://en.wikipedia.org/wiki/Pairi_Daiza), formerly Paradisio, is an animal park and botanical garden located in Wallonia.
 
 At the beginning of 2014, this privately owned park obtained, for the 15 years to come, the right to host two pandas given by the government of China. 
-This deal was perceived as a treason by the [Antwerp ZOO](https://en.wikipedia.org/wiki/Antwerp_Zoo), the oldest zoological park of Belgium, owned by the Royal Zoological Society of Antwerp, and located in Flanders. 
+This deal was perceived as a treason by the [Antwerp ZOO](https://en.wikipedia.org/wiki/Antwerp_Zoo), the oldest zoological park of Belgium, ran by the Royal Zoological Society of Antwerp, and located in Flanders. 
  
 Some have seen here the result of political manipulations, favoritism of one language community over another, smear campaign against a flemish institution in favor of a corporation from Wallonia… 
 One must know that during these events, the prime minister of Belgium was Elio Di Rupo, a french-speaking citizen native of the province where the pandas will be located.
