@@ -36,7 +36,7 @@
  "orientation":"orthogonal",
  "properties":
     {
-
+     "next_level":"level2"
     },
  "tileheight":32,
  "tilesets":[
