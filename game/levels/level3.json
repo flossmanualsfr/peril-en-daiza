@@ -156,7 +156,7 @@
  "orientation":"orthogonal",
  "properties":
     {
-
+     "next_level":"level4"
     },
  "tileheight":32,
  "tilesets":[
