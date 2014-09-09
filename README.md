@@ -1,3 +1,9 @@
+- [Français](#francais)
+- [English](#english)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+<a name="francais"></a>
 Péril en Daïza
 ==============
 
@@ -39,7 +45,7 @@ Pour démarrer la version de développemnet de Péril en Daïza, il est préfér
 À ce jour, le version 2.72 n'étant pas encore sortie, nous suggérons donc d'utiliser la *[latest build](https://builder.blender.org/)*.
 
  1. [Télécharger l'archive complète](https://github.com/flossmanualsfr/peril-en-daiza/archive/master.zip) de ce projet ou effectuez un clone de ce dépôt `git clone https://github.com/flossmanualsfr/peril-en-daiza.git`.
- 2. Lancer le blenderplayer avec le fichier perilendaiza.blend ( pour linux : p.ex. `$ blenderplayer ~/peril-en-daiza/game/perilendaiza.blend`) ou ouvrez le fichier perilendaiza.blend avec Blender et appuyez sur la touche 'p' de votre clavier
+ 2. Lancer le blenderplayer avec le fichier perilendaiza.blend ( pour linux : p.ex. `$ blenderplayer ~/peril-en-daiza/game/perilendaiza.blend`) ou ouvrez le fichier perilendaiza.blend avec Blender et appuyez sur la touche **P** de votre clavier
 
 Commandes de jeu
 ----------------
@@ -85,19 +91,20 @@ La police "Big Bottom Cartoon", crée par [Karen B. Jones](http://karenbjones.co
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+<a name="english"></a>
 Peril in Daïza
 ==============
 
-[Peril in Daïza](http://perilendaiza.com/) is a video game of which the development started during a booksprint organized by the [french-speaking branch of Floss Manuals](http://fr.flossmanuals.net/) between the 4th and 8th of August 2014 in Brussels Belgium with the objective of writing a manual for [making video games with Blender](http://fr.flossmanuals.net/blender-pour-le-jeu-video/).
-This game was created and produced by the team of authors with these two purposes : to be used as a base for the screen captures necessary for the manual and to show that it's actually possible to quickly create a game using the Blender Game Engine. 
-Since then, the project follows its own path and continues to be developped by the same team.
+[Peril in Daïza](http://perilendaiza.com/) video game started its development during a booksprint organized by the [french-speaking branch of Floss Manuals](http://fr.flossmanuals.net/) between the 4th and 8th of August 2014 in Brussels, Belgium, with the objective of writing a manual for [making video games with Blender](http://fr.flossmanuals.net/blender-pour-le-jeu-video/).
+This game was created and produced by the team of authors with two purposes : to be used as a base for the manual's screenshots and to show that it's actually possible to quickly create a game using the Blender Game Engine. 
+Since then, the project goes on its own path and is developped by the same team.
 
 The project has also its own website [perilendaiza.com](http://perilendaiza.com/).
 
 Theme of the game
 -----------------
 The main character is a panda, named Phong. Its community is under the menace of human society and the industrialization that comes with it.
-Phong needs to travel the world in search of elements that will permit to save the valley and its habitants.
+Phong travels the world in search of elements that will permit him to save the valley and its habitants.
   
 About the name
 --------------
@@ -106,7 +113,7 @@ About the name
 At the beginning of 2014, this privately owned park obtained, for the 15 years to come, the right to host two pandas given by the government of China. 
 This deal was perceived as a treason by the [Antwerp ZOO](https://en.wikipedia.org/wiki/Antwerp_Zoo), the oldest zoological park of Belgium, owned by the Royal Zoological Society of Antwerp, and located in Flanders. 
  
-Some have seen here the result of political manipulations, favoritism of one language community over another, smear campaign against a flemish institution in favor of a corporation from Wallonia,… 
+Some have seen here the result of political manipulations, favoritism of one language community over another, smear campaign against a flemish institution in favor of a corporation from Wallonia… 
 One must know that during these events, the prime minister of Belgium was Elio Di Rupo, a french-speaking citizen native of the province where the pandas will be located.
 This series of events, that the local media called "pandagate", was agitating the country and its politicians for weeks.
 
@@ -122,25 +129,25 @@ The pun on "Peril in Daïza" represents well the theme of the game (a panda must
 
 Starting the game
 -----------------
-To start the developper version of Peril in Daïza, you must preferably use the 2.72 version of Blender (version 2.71 has some bugs when changing levels). 
-So far, version 2.72 is not available yet. We suggest you then use the [latest build](https://builder.blender.org/).
+To start the developper version of Peril in Daïza, we recommend using the 2.72 version of Blender (version 2.71 has some bugs when changing levels). 
+But Blender version 2.72 is not available so far. We suggest you then use the [latest build](https://builder.blender.org/).
 
  1. [Download the complete archive](https://github.com/flossmanualsfr/peril-en-daiza/archive/master.zip) of this project or clone this repository `git clone https://github.com/flossmanualsfr/peril-en-daiza.git`.
- 2. Launch blenderplayer with the file perilendaiza.blend ( under linux for example: `$ blenderplayer ~/peril-en-daiza/game/perilendaiza.blend`) or open the perilendaiza.blend file with Blender and hit 'p' on your keyboard
+ 2. Launch blenderplayer with the file perilendaiza.blend (under linux for example: `$ blenderplayer ~/peril-en-daiza/game/perilendaiza.blend`) or open the perilendaiza.blend file with Blender and hit **P** on your keyboard
 
 Game commands
 -------------
 
   - **Arrows** : To move
-  - **Spacebar** : Use the magic power with the stick
-  - **Tab** : Zoom on the character
+  - **Spacebar** : Use the stick's magic power
+  - **Tab** : Zoom the character
   - **Enter** : Skip intro
-  - **R** : Restart the level (if stuck)
+  - **R** : Restart level (if stuck)
 
 Create a level
 --------------
 
-[Tutorial for creating a level](https://github.com/flossmanualsfr/peril-en-daiza/wiki/Cr%C3%A9ation-d%27un-niveau)
+[Tutorial for creating a level](https://github.com/flossmanualsfr/peril-en-daiza/wiki/Create-a-Level)
 
 Credits
 -------
@@ -148,7 +155,7 @@ Credits
 [The team of co-authors from the book](http://fr.flossmanuals.net/blender-pour-le-jeu-video/ch042_a-propos):
 
   - [Jean-Michel Armand](http://j-mad.com/blog/)
-  - [Camille Bissuel](http://nylnook.com/fr)
+  - [Camille Bissuel](http://nylnook.com/en)
   - Benoît Bolsée
   - Quentin Bolsée
   - [Élisa de Castro Guerra](http://activdesign.eu)
