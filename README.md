@@ -1,3 +1,5 @@
+![Welcome screen](https://github.com/flossmanualsfr/peril-en-daiza/blob/master/src/documentation/readme-welcome-screen.jpg)
+
 - [Français](#francais)
 - [English](#english)
 
