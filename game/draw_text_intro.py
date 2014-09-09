@@ -25,8 +25,10 @@ def init():
     """init function - runs once"""
     # create a new font object, use external ttf file
     font_path = logic.expandPath('//text/Big_Bottom_Cartoon_AD.ttf')
+    italic_font_path = logic.expandPath('//text/Big_Bottom_Cartoon_Italic_AD.ttf')
     # store the font indice - to use later
     logic.font_id = blf.load(font_path)
+    logic.font_id_italic = blf.load(italic_font_path)
 
     # set the font drawing routine to run every frame
     scene = logic.getCurrentScene()
@@ -56,13 +58,19 @@ def write():
         cam["Switch"] = False
     # BLF drawing routine
     font_id = logic.font_id
+    font_id_italic = logic.font_id_italic
     blf.position(font_id, width*0.03, height * 0.05, 0)
+    blf.position(font_id_italic, width*0.03, height * 0.05, 0)
     blf.size(font_id, int(18 * (width/dpi) * 0.062), dpi)
-    if cam["Index"] < len(text):
+    blf.size(font_id_italic, int(18 * (width/dpi) * 0.062), dpi)
+    if cam["Index"] < 4:
         blf.draw(font_id, text[cam["Index"]])
+    elif cam["Index"] < len(text):
+        blf.draw(font_id_italic, text[cam["Index"]])
     
     # skip
     if cam["Index"] < 1:
         bgl.glColor4f(0.5, 0.5, 0.5, c)
         blf.position(font_id, width*0.02, height*0.9, 0)
+
         blf.draw(font_id, skip)
