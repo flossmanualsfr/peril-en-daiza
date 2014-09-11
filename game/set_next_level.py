@@ -11,6 +11,6 @@ def main(cont):
     camera_dummy = cont.owner
     scene = bge.logic.getCurrentScene()
     next_scene = "menu"
-    print("1")
+    print("Moving to next level")
     if not "next_level" in camera_dummy or not scene.replace(camera_dummy["next_level"]):
         scene.replace("menu")
