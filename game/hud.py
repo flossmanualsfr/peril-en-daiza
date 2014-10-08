@@ -7,27 +7,46 @@ import configparser
 config = configparser.ConfigParser()
 config.readfp(codecs.open(logic.expandPath("//text/" + logic.globalDict["LANG"] + ".ini"), "r", "utf8"))
 l_timer = config.get("HUD", 'timer')
+l_score = config.get("HUD", 'score')
+l_vortex = config.get("HUD", 'vortex')
 
 dpi = 76
 
-def init():
+# to hold the total game time in seconds
+game_timer = 0.0
+# the current camera counting the seconds
+active_camera = None
+# the logic object counting the bamboo
+bamboo_counter = None
+# the logic object holding the vortex count
+panda = None
+
+def init(cont):
     """init function - runs once"""
+    global active_camera, game_timer, bamboo_counter, panda
+    scene = logic.getCurrentScene()
+    active_camera = cont.owner
+    bamboo_counter = scene.objects["bambou_counter"]
+    panda = scene.objects["Panda"]
     # create a new font object, use external ttf file
     font_path = logic.expandPath('//text/Big_Bottom_Cartoon_AD.ttf')
     # store the font indice - to use later
     logic.font_id = blf.load(font_path)
 
     # set the font drawing routine to run every frame
-    scene = logic.getCurrentScene()
-    scene.post_draw = [write, save_score]
-    if "Timer" in logic.globalDict:
-        scene.active_camera["Timer"] = logic.globalDict["Timer"]
+    scene.post_draw = [write]
+    # initialize the timer at the start of the scene
+    active_camera["Timer"] = game_timer
 
 def write():
-    
-    scene = logic.getCurrentScene()
-    vortex = scene.objects["Panda"].power
     """write on screen"""
+    # retrieve timer
+    global game_timer
+    scene = logic.getCurrentScene()
+    game_timer = int(active_camera["Timer"])
+    catched = bamboo_counter["catched"]
+    total = bamboo_counter["total"]
+    vortex = panda.power
     width = render.getWindowWidth()
     height = render.getWindowHeight()
 
@@ -44,11 +63,12 @@ def write():
     font_id = logic.font_id
     blf.size(font_id, int(18 * (width/dpi) * 0.06), dpi)
     blf.position(font_id, width*0.02, height*0.95, 0)
-    blf.draw(font_id, l_timer + " : " + str(int(scene.active_camera["Timer"])))
+    if game_timer < 60:
+        blf.draw(font_id, "{0} : {1:02d}".format(l_timer,game_timer))
+    else:
+        blf.draw(font_id, "{0} : {1}:{2:02d}".format(l_timer,game_timer//60,game_timer%60))
     blf.position(font_id, width*0.02, height*0.9, 0)
-    blf.draw(font_id, "@ : " + str(vortex))
+    blf.draw(font_id, "{0} : {1} / {2}".format(l_score, catched, total))
+    blf.position(font_id, width*0.02, height*0.85, 0)
+    blf.draw(font_id, "{0} : {1}".format(l_vortex, vortex))
 
-def save_score():
-
-    scene = logic.getCurrentScene()
-    logic.globalDict["Timer"] = scene.active_camera["Timer"]
