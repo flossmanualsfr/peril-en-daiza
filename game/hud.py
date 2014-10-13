@@ -9,6 +9,7 @@ config.readfp(codecs.open(logic.expandPath("//text/" + logic.globalDict["LANG"] 
 l_timer = config.get("HUD", 'timer')
 l_score = config.get("HUD", 'score')
 l_vortex = config.get("HUD", 'vortex')
+l_level = config.get("HUD", 'level')
 
 dpi = 76
 
@@ -18,16 +19,19 @@ game_timer = 0.0
 active_camera = None
 # the logic object counting the bamboo
 bamboo_counter = None
-# the logic object holding the vortex count
+# the logic object holding the panda object
 panda = None
+# to hold the level number
+level = None
 
 def init(cont):
     """init function - runs once"""
-    global active_camera, game_timer, bamboo_counter, panda
+    global active_camera, game_timer, bamboo_counter, panda, level
     scene = logic.getCurrentScene()
     active_camera = cont.owner
     bamboo_counter = scene.objects["bambou_counter"]
     panda = scene.objects["Panda"]
+    level = logic.globalDict["level"]
     # create a new font object, use external ttf file
     font_path = logic.expandPath('//text/Big_Bottom_Cartoon_AD.ttf')
     # store the font indice - to use later
@@ -67,8 +71,10 @@ def write():
         blf.draw(font_id, "{0} : {1:02d}".format(l_timer,game_timer))
     else:
         blf.draw(font_id, "{0} : {1}:{2:02d}".format(l_timer,game_timer//60,game_timer%60))
-    blf.position(font_id, width*0.02, height*0.9, 0)
-    blf.draw(font_id, "{0} : {1} / {2}".format(l_score, catched, total))
+    blf.position(font_id, width*0.02, height*0.90, 0)
+    blf.draw(font_id, "{0} : {1}".format(l_level, level))
     blf.position(font_id, width*0.02, height*0.85, 0)
+    blf.draw(font_id, "{0} : {1} / {2}".format(l_score, catched, total))
+    blf.position(font_id, width*0.02, height*0.80, 0)
     blf.draw(font_id, "{0} : {1}".format(l_vortex, vortex))
 
